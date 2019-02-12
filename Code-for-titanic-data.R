@@ -27,4 +27,5 @@ titanic$boat[is.na(titanic$boat)] <- "NA"
 titanic$cabin[is.na(titanic$cabin)] <- "NA"
 titanic %>% mutate(has_cabin_number = ifelse(cabin == "NA", 0, 1))
 
-
+write.csv(titanic, 'titanic_clean.csv')
+write.csv(titanic, 'titanic_original.csv')
