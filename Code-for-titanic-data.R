@@ -25,7 +25,7 @@ titanic$boat[is.na(titanic$boat)] <- "NA"
 
 #missing cabin numbers could possibly mean that the person did not purchase a room. NA values should be converted to a str in order to analyze the column
 titanic$cabin[is.na(titanic$cabin)] <- "NA"
-titanic %>% mutate(has_cabin_number = ifelse(cabin == "NA", 0, 1))
+titanic_clean <- titanic %>% mutate(has_cabin_number = ifelse(cabin == "NA", 0, 1))
 
-write.csv(titanic, 'titanic_clean.csv')
+write.csv(titanic_clean, 'titanic_clean.csv')
 write.csv(titanic, 'titanic_original.csv')
